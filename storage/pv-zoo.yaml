@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: kafka-zookeeper-1
+  namespace: kafka
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: zookeeper-manual
+  hostPath:
+    path: /home/ubuntu/data/zookeeper
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: kafka-zookeeper-2
+  namespace: kafka
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: zookeeper-manual
+  hostPath:
+    path: /Users/ryan/playground/devops/kafka/data/zookeeper
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: kafka-zookeeper-3
+  namespace: kafka
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: zookeeper-manual
+  hostPath:
+    path: /Users/ryan/playground/devops/kafka/data/zookeeper
+
